@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using JAP_Task_1_MoviesApi.Models;
+﻿using JAP_Task_1_MoviesApi.Models;
 using JAP_Task_1_MoviesApi.Requests;
 using JAP_Task_1_MoviesApi.Services;
 using Microsoft.AspNetCore.Mvc;

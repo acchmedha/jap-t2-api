@@ -1,6 +1,7 @@
 ﻿using JAP_Task_1_MoviesApi.Models;
 using JAP_Task_1_MoviesApi.Services;
 using Microsoft.EntityFrameworkCore;
+using MoviesApp.Api.Entities;
 using System;
 
 
@@ -87,7 +88,7 @@ namespace JAP_Task_1_MoviesApi.Extensions
             #endregion
 
             #region Movies static data
-            _ = modelBuilder.Entity<VideoEntity>().HasData(
+            modelBuilder.Entity<VideoEntity>().HasData(
                 new VideoEntity
                 {
                     Id = 1,
@@ -226,7 +227,7 @@ namespace JAP_Task_1_MoviesApi.Extensions
                      Overview = "The Templeton brothers — Tim and his Boss Baby little bro Ted — have become adults and drifted " +
                      "away from each other. But a new boss baby with a cutting-edge approach and a can-do attitude is about to " +
                      "bring them together again … and inspire a new family business.",
-                     Type = VideoEnum.Movie
+                     Type = 0
                  },
                  new VideoEntity
                  {
@@ -818,10 +819,273 @@ namespace JAP_Task_1_MoviesApi.Extensions
                     PosterPath = "https://m.media-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1000_.jpg",
                     ReleaseDate = new DateTime(1999, 1, 10),
                     Type = VideoEnum.TvShow
+                },
+
+                //Movies
+
+                new VideoEntity
+                {
+                    Id = 73,
+                    Title = "The Dark Knight 2",
+                    Overview = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+                    PosterPath = "https://upload.wikimedia.org/wikipedia/sh/8/83/Dark_knight_rises_poster.jpg",
+                    ReleaseDate = new DateTime(2008, 7, 18),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 74,
+                    Title = "Schindler's List 2",
+                    Overview = "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+                    PosterPath = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c617e634647543.56d846b10d56f.jpg",
+                    ReleaseDate = new DateTime(1994, 2, 4),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 75,
+                    Title = "The Lord of the Rings: The Return of the King 2",
+                    Overview = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+                    PosterPath = "https://img.discogs.com/MsgjJVAxVCXb1w86ffIbaNRr2BY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-728620-1512923411-4779.jpeg.jpg",
+                    ReleaseDate = new DateTime(2003, 12, 1),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 76,
+                    Title = "Pulp Fiction 2",
+                    Overview = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                    PosterPath = "https://prod.miramax.digital/media/assets/Pulp-Fiction1.png",
+                    ReleaseDate = new DateTime(1994, 10, 14),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 77,
+                    Title = "The Good, the Bad and the Ugly 2",
+                    Overview = "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+                    PosterPath = "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg",
+                    ReleaseDate = new DateTime(1996, 12, 23),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 78,
+                    Title = "The Lord of the Rings: The Fellowship of the Ring 2",
+                    Overview = "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+                    PosterPath = "https://images.moviesanywhere.com/198e228b071c60f5ad57e5f62fe60029/ff22cad6-2218-414d-b853-3f95d76905c7.jpg?h=375&resize=fit&w=250",
+                    ReleaseDate = new DateTime(2001, 12, 19),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 79,
+                    Title = "Fight Club 2",
+                    Overview = "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+                    PosterPath = "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg",
+                    ReleaseDate = new DateTime(1999, 11, 11),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 80,
+                    Title = "Forrest Gump 2",
+                    Overview = "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
+                    PosterPath = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/37a5b434647543.56d846b10ca45.jpg",
+                    ReleaseDate = new DateTime(1994, 7, 6),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 81,
+                    Title = "Inception 2",
+                    Overview = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+                    PosterPath = "https://m.media-amazon.com/images/I/81p+xe8cbnL._SY445_.jpg",
+                    ReleaseDate = new DateTime(2010, 7, 22),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 82,
+                    Title = "The Shawshank Redemption 3",
+                    Overview = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+                    PosterPath = "https://swank.azureedge.net/swank/prod-film/3560cd8a-9491-4ab9-876c-8a8d6b84a6dd/f8e7c904-669a-4c9f-ac29-d19b64b43e33/one-sheet.jpg?width=335&height=508&mode=crop",
+                    ReleaseDate = new DateTime(1994, 9, 22),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 83,
+                    Title = "The Godfather 3",
+                    Overview = "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
+                    PosterPath = "https://www.reelviews.net/resources/img/posters/thumbs/godfather_poster.jpg",
+                    ReleaseDate = new DateTime(1972, 3, 24),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 84,
+                    Title = "The Godfather: Part II 3",
+                    Overview = "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
+                    PosterPath = "https://shotonwhat.com/images/0071562-med.jpg",
+                    ReleaseDate = new DateTime(1974, 12, 20),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 85,
+                    Title = "The Dark Knight 3",
+                    Overview = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+                    PosterPath = "https://upload.wikimedia.org/wikipedia/sh/8/83/Dark_knight_rises_poster.jpg",
+                    ReleaseDate = new DateTime(2008, 7, 18),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 86,
+                    Title = "12 Angry Men 3",
+                    Overview = "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
+                    PosterPath = "https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg",
+                    ReleaseDate = new DateTime(1957, 4, 1),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 87,
+                    Title = "Schindler's List 3",
+                    Overview = "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+                    PosterPath = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c617e634647543.56d846b10d56f.jpg",
+                    ReleaseDate = new DateTime(1994, 2, 4),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 88,
+                    Title = "The Lord of the Rings: The Return of the King 3",
+                    Overview = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+                    PosterPath = "https://img.discogs.com/MsgjJVAxVCXb1w86ffIbaNRr2BY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-728620-1512923411-4779.jpeg.jpg",
+                    ReleaseDate = new DateTime(2003, 12, 1),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 89,
+                    Title = "Pulp Fiction 3",
+                    Overview = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                    PosterPath = "https://prod.miramax.digital/media/assets/Pulp-Fiction1.png",
+                    ReleaseDate = new DateTime(1994, 10, 14),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 90,
+                    Title = "The Good, the Bad and the Ugly 3",
+                    Overview = "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+                    PosterPath = "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg",
+                    ReleaseDate = new DateTime(1996, 12, 23),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 91,
+                    Title = "The Lord of the Rings: The Fellowship of the Ring 3",
+                    Overview = "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+                    PosterPath = "https://images.moviesanywhere.com/198e228b071c60f5ad57e5f62fe60029/ff22cad6-2218-414d-b853-3f95d76905c7.jpg?h=375&resize=fit&w=250",
+                    ReleaseDate = new DateTime(2001, 12, 19),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 92,
+                    Title = "Fight Club 3",
+                    Overview = "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+                    PosterPath = "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg",
+                    ReleaseDate = new DateTime(1999, 11, 11),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 93,
+                    Title = "Forrest Gump 3",
+                    Overview = "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
+                    PosterPath = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/37a5b434647543.56d846b10ca45.jpg",
+                    ReleaseDate = new DateTime(1994, 7, 6),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 94,
+                    Title = "Inception 3",
+                    Overview = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+                    PosterPath = "https://m.media-amazon.com/images/I/81p+xe8cbnL._SY445_.jpg",
+                    ReleaseDate = new DateTime(2010, 7, 22),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 95,
+                    Title = "The Shawshank Redemption 4",
+                    Overview = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+                    PosterPath = "https://swank.azureedge.net/swank/prod-film/3560cd8a-9491-4ab9-876c-8a8d6b84a6dd/f8e7c904-669a-4c9f-ac29-d19b64b43e33/one-sheet.jpg?width=335&height=508&mode=crop",
+                    ReleaseDate = new DateTime(1994, 9, 22),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 96,
+                    Title = "The Godfather 4",
+                    Overview = "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
+                    PosterPath = "https://www.reelviews.net/resources/img/posters/thumbs/godfather_poster.jpg",
+                    ReleaseDate = new DateTime(1972, 3, 24),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 97,
+                    Title = "The Godfather: Part II 4",
+                    Overview = "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
+                    PosterPath = "https://shotonwhat.com/images/0071562-med.jpg",
+                    ReleaseDate = new DateTime(1974, 12, 20),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 98,
+                    Title = "The Dark Knight 4",
+                    Overview = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+                    PosterPath = "https://upload.wikimedia.org/wikipedia/sh/8/83/Dark_knight_rises_poster.jpg",
+                    ReleaseDate = new DateTime(2008, 7, 18),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 99,
+                    Title = "12 Angry Men 4",
+                    Overview = "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
+                    PosterPath = "https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg",
+                    ReleaseDate = new DateTime(1957, 4, 1),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 100,
+                    Title = "Schindler's List 4",
+                    Overview = "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+                    PosterPath = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c617e634647543.56d846b10d56f.jpg",
+                    ReleaseDate = new DateTime(1994, 2, 4),
+                    Type = VideoEnum.Movie
+                },
+                new VideoEntity
+                {
+                    Id = 101,
+                    Title = "The Lord of the Rings: The Return of the King 4",
+                    Overview = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+                    PosterPath = "https://img.discogs.com/MsgjJVAxVCXb1w86ffIbaNRr2BY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-728620-1512923411-4779.jpeg.jpg",
+                    ReleaseDate = new DateTime(2003, 12, 1),
+                    Type = VideoEnum.Movie
                 }
            );
             #endregion
-
 
             #region Admin user
             AuthService.CreatePasswordHash("password", out byte[] passHash, out byte[] passSalt);
@@ -842,14 +1106,221 @@ namespace JAP_Task_1_MoviesApi.Extensions
                 new RatingEntity { Id = 6, Value = 4.35, VideoEntityId = 6, UserEntityId = 1 },
                 new RatingEntity { Id = 7, Value = 4.3, VideoEntityId = 7, UserEntityId = 1 },
                 new RatingEntity { Id = 8, Value = 4.2, VideoEntityId = 8, UserEntityId = 1 },
-                new RatingEntity { Id = 9, Value = 4.2, VideoEntityId = 9, UserEntityId = 1 },
+                new RatingEntity { Id = 9, Value = 4.6, VideoEntityId = 9, UserEntityId = 1 },
                 new RatingEntity { Id = 10, Value = 4.2, VideoEntityId = 10, UserEntityId = 1 },
-                new RatingEntity { Id = 11, Value = 4.2, VideoEntityId = 60, UserEntityId = 1 },
-                new RatingEntity { Id = 12, Value = 4.2, VideoEntityId = 61, UserEntityId = 1 },
-                new RatingEntity { Id = 13, Value = 4.2, VideoEntityId = 62, UserEntityId = 1 },
-                new RatingEntity { Id = 14, Value = 4.2, VideoEntityId = 63, UserEntityId = 1 },
-                new RatingEntity { Id = 15, Value = 4.2, VideoEntityId = 64, UserEntityId = 1 },
-                new RatingEntity { Id = 16, Value = 4.2, VideoEntityId = 65, UserEntityId = 1 }
+                new RatingEntity { Id = 11, Value = 4.8, VideoEntityId = 11, UserEntityId = 1 },
+                new RatingEntity { Id = 12, Value = 4.1, VideoEntityId = 12, UserEntityId = 1 },
+                new RatingEntity { Id = 13, Value = 4.2, VideoEntityId = 13, UserEntityId = 1 },
+                new RatingEntity { Id = 14, Value = 4.2, VideoEntityId = 14, UserEntityId = 1 },
+                new RatingEntity { Id = 15, Value = 4.2, VideoEntityId = 15, UserEntityId = 1 },
+                new RatingEntity { Id = 16, Value = 4.35, VideoEntityId = 16, UserEntityId = 1 },
+
+                new RatingEntity { Id = 17, Value = 4.6, VideoEntityId = 17, UserEntityId = 1 },
+                new RatingEntity { Id = 18, Value = 4.25, VideoEntityId = 18, UserEntityId = 1 },
+                new RatingEntity { Id = 19, Value = 4.5, VideoEntityId = 19, UserEntityId = 1 },
+                new RatingEntity { Id = 20, Value = 4.5, VideoEntityId = 20, UserEntityId = 1 },
+                new RatingEntity { Id = 21, Value = 4.2, VideoEntityId = 21, UserEntityId = 1 },
+                new RatingEntity { Id = 22, Value = 4.35, VideoEntityId = 22, UserEntityId = 1 },
+                new RatingEntity { Id = 23, Value = 4.3, VideoEntityId = 23, UserEntityId = 1 },
+                new RatingEntity { Id = 24, Value = 4.2, VideoEntityId = 24, UserEntityId = 1 },
+                new RatingEntity { Id = 25, Value = 4.6, VideoEntityId = 25, UserEntityId = 1 },
+                new RatingEntity { Id = 26, Value = 4.2, VideoEntityId = 26, UserEntityId = 1 },
+                new RatingEntity { Id = 27, Value = 4.8, VideoEntityId = 27, UserEntityId = 1 },
+                new RatingEntity { Id = 28, Value = 4.1, VideoEntityId = 28, UserEntityId = 1 },
+                new RatingEntity { Id = 29, Value = 4.2, VideoEntityId = 29, UserEntityId = 1 },
+                new RatingEntity { Id = 30, Value = 4.3, VideoEntityId = 30, UserEntityId = 1 },
+                new RatingEntity { Id = 31, Value = 3.9, VideoEntityId = 31, UserEntityId = 1 },
+                new RatingEntity { Id = 32, Value = 4.35, VideoEntityId = 32, UserEntityId = 1 },
+
+                new RatingEntity { Id = 33, Value = 4.6, VideoEntityId = 33, UserEntityId = 1 },
+                new RatingEntity { Id = 34, Value = 4.25, VideoEntityId = 34, UserEntityId = 1 },
+                new RatingEntity { Id = 35, Value = 4.5, VideoEntityId = 35, UserEntityId = 1 },
+                new RatingEntity { Id = 36, Value = 4.2, VideoEntityId = 36, UserEntityId = 1 },
+                new RatingEntity { Id = 37, Value = 4.2, VideoEntityId = 37, UserEntityId = 1 },
+                new RatingEntity { Id = 38, Value = 4.35, VideoEntityId = 38, UserEntityId = 1 },
+                new RatingEntity { Id = 39, Value = 4.3, VideoEntityId = 39, UserEntityId = 1 },
+                new RatingEntity { Id = 40, Value = 4.2, VideoEntityId = 40, UserEntityId = 1 },
+                new RatingEntity { Id = 41, Value = 3.6, VideoEntityId = 41, UserEntityId = 1 },
+                new RatingEntity { Id = 42, Value = 4.2, VideoEntityId = 42, UserEntityId = 1 },
+                new RatingEntity { Id = 43, Value = 4.8, VideoEntityId = 43, UserEntityId = 1 },
+                new RatingEntity { Id = 44, Value = 4.1, VideoEntityId = 44, UserEntityId = 1 },
+                new RatingEntity { Id = 45, Value = 4.2, VideoEntityId = 45, UserEntityId = 1 },
+                new RatingEntity { Id = 46, Value = 4.3, VideoEntityId = 46, UserEntityId = 1 },
+                new RatingEntity { Id = 47, Value = 3.9, VideoEntityId = 47, UserEntityId = 1 },
+                new RatingEntity { Id = 48, Value = 4.35, VideoEntityId = 48, UserEntityId = 1 },
+
+                new RatingEntity { Id = 49, Value = 4.6, VideoEntityId = 49, UserEntityId = 1 },
+                new RatingEntity { Id = 50, Value = 4.25, VideoEntityId = 50, UserEntityId = 1 },
+                new RatingEntity { Id = 51, Value = 4.5, VideoEntityId = 51, UserEntityId = 1 },
+                new RatingEntity { Id = 52, Value = 4.2, VideoEntityId = 52, UserEntityId = 1 },
+                new RatingEntity { Id = 53, Value = 4.2, VideoEntityId = 53, UserEntityId = 1 },
+                new RatingEntity { Id = 54, Value = 4.35, VideoEntityId = 54, UserEntityId = 1 },
+                new RatingEntity { Id = 55, Value = 4.3, VideoEntityId = 55, UserEntityId = 1 },
+                new RatingEntity { Id = 56, Value = 4.2, VideoEntityId = 56, UserEntityId = 1 },
+                new RatingEntity { Id = 57, Value = 3.6, VideoEntityId = 57, UserEntityId = 1 },
+                new RatingEntity { Id = 58, Value = 4.2, VideoEntityId = 58, UserEntityId = 1 },
+                new RatingEntity { Id = 59, Value = 4.8, VideoEntityId = 59, UserEntityId = 1 },
+                new RatingEntity { Id = 60, Value = 4.1, VideoEntityId = 60, UserEntityId = 1 },
+                new RatingEntity { Id = 61, Value = 4.2, VideoEntityId = 61, UserEntityId = 1 },
+                new RatingEntity { Id = 62, Value = 4.3, VideoEntityId = 62, UserEntityId = 1 },
+                new RatingEntity { Id = 63, Value = 3.9, VideoEntityId = 63, UserEntityId = 1 },
+                new RatingEntity { Id = 64, Value = 4.35, VideoEntityId = 64, UserEntityId = 1 },
+
+                new RatingEntity { Id = 65, Value = 4.6, VideoEntityId = 65, UserEntityId = 1 },
+                new RatingEntity { Id = 66, Value = 4.25, VideoEntityId = 66, UserEntityId = 1 },
+                new RatingEntity { Id = 67, Value = 4.5, VideoEntityId = 67, UserEntityId = 1 },
+                new RatingEntity { Id = 68, Value = 4.2, VideoEntityId = 68, UserEntityId = 1 },
+                new RatingEntity { Id = 69, Value = 4.2, VideoEntityId = 69, UserEntityId = 1 },
+                new RatingEntity { Id = 70, Value = 4.35, VideoEntityId = 70, UserEntityId = 1 },
+                new RatingEntity { Id = 71, Value = 4.3, VideoEntityId = 71, UserEntityId = 1 },
+                new RatingEntity { Id = 72, Value = 4.2, VideoEntityId = 72, UserEntityId = 1 },
+                new RatingEntity { Id = 73, Value = 3.6, VideoEntityId = 73, UserEntityId = 1 },
+                new RatingEntity { Id = 74, Value = 4.2, VideoEntityId = 74, UserEntityId = 1 },
+                new RatingEntity { Id = 75, Value = 4.8, VideoEntityId = 75, UserEntityId = 1 },
+                new RatingEntity { Id = 76, Value = 4.1, VideoEntityId = 76, UserEntityId = 1 },
+                new RatingEntity { Id = 77, Value = 4.2, VideoEntityId = 77, UserEntityId = 1 },
+                new RatingEntity { Id = 78, Value = 4.3, VideoEntityId = 78, UserEntityId = 1 },
+                new RatingEntity { Id = 79, Value = 3.9, VideoEntityId = 79, UserEntityId = 1 },
+                new RatingEntity { Id = 80, Value = 4.35, VideoEntityId = 80, UserEntityId = 1 },
+
+                new RatingEntity { Id = 81, Value = 4.6, VideoEntityId = 81, UserEntityId = 1 },
+                new RatingEntity { Id = 82, Value = 4.25, VideoEntityId = 82, UserEntityId = 1 },
+                new RatingEntity { Id = 83, Value = 4.5, VideoEntityId = 83, UserEntityId = 1 },
+                new RatingEntity { Id = 84, Value = 4.2, VideoEntityId = 84, UserEntityId = 1 },
+                new RatingEntity { Id = 85, Value = 4.2, VideoEntityId = 85, UserEntityId = 1 },
+                new RatingEntity { Id = 86, Value = 4.35, VideoEntityId = 86, UserEntityId = 1 },
+                new RatingEntity { Id = 87, Value = 4.3, VideoEntityId = 87, UserEntityId = 1 },
+                new RatingEntity { Id = 88, Value = 4.2, VideoEntityId = 88, UserEntityId = 1 },
+                new RatingEntity { Id = 89, Value = 3.6, VideoEntityId = 89, UserEntityId = 1 },
+                new RatingEntity { Id = 90, Value = 4.2, VideoEntityId = 90, UserEntityId = 1 },
+                new RatingEntity { Id = 91, Value = 4.8, VideoEntityId = 91, UserEntityId = 1 },
+                new RatingEntity { Id = 92, Value = 4.1, VideoEntityId = 92, UserEntityId = 1 },
+                new RatingEntity { Id = 93, Value = 4.2, VideoEntityId = 93, UserEntityId = 1 },
+                new RatingEntity { Id = 94, Value = 4.3, VideoEntityId = 94, UserEntityId = 1 },
+                new RatingEntity { Id = 95, Value = 3.9, VideoEntityId = 95, UserEntityId = 1 },
+                new RatingEntity { Id = 96, Value = 4.35, VideoEntityId = 96, UserEntityId = 1 },
+
+                new RatingEntity { Id = 97, Value = 3.6, VideoEntityId = 97, UserEntityId = 1 },
+                new RatingEntity { Id = 98, Value = 4.2, VideoEntityId = 98, UserEntityId = 1 },
+                new RatingEntity { Id = 99, Value = 4.8, VideoEntityId = 99, UserEntityId = 1 },
+                new RatingEntity { Id = 100, Value = 4.1, VideoEntityId = 100, UserEntityId = 1 },
+                new RatingEntity { Id = 101, Value = 4.2, VideoEntityId = 101, UserEntityId = 1 }
+            );
+            #endregion
+
+            #region Screenings, duration is in minutes
+            modelBuilder.Entity<ScreeningEntity>().HasData(
+                new ScreeningEntity { Id = 1, Name = "Screening 1", VideoEntityId = 1, SoldTickets = 7, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 2, Name = "Screening 2", VideoEntityId = 2, SoldTickets = 6, ScreeningDate = DateTime.Now.AddDays(20) },
+                new ScreeningEntity { Id = 3, Name = "Screening 3", VideoEntityId = 3, SoldTickets = 5, ScreeningDate = DateTime.Now.AddDays(10) },
+                new ScreeningEntity { Id = 4, Name = "Screening 4", VideoEntityId = 4, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(5) },
+                new ScreeningEntity { Id = 5, Name = "Screening 5", VideoEntityId = 5, SoldTickets = 3, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 6, Name = "Screening 6", VideoEntityId = 6, SoldTickets = 2, ScreeningDate = new DateTime(2015, 10, 10) },
+                new ScreeningEntity { Id = 7, Name = "Screening 7", VideoEntityId = 7, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 8, Name = "Screening 8", VideoEntityId = 8, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(29) },
+                new ScreeningEntity { Id = 9, Name = "Screening 9", VideoEntityId = 9, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 10, Name = "Screening 10", VideoEntityId = 10, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(21) },
+                new ScreeningEntity { Id = 11, Name = "Screening 11", VideoEntityId = 11, SoldTickets = 4, ScreeningDate = new DateTime(2010, 11, 10) },
+                new ScreeningEntity { Id = 12, Name = "Screening 12", VideoEntityId = 12, SoldTickets = 21, ScreeningDate = new DateTime(2012, 1, 1) },
+                new ScreeningEntity { Id = 13, Name = "Screening 13", VideoEntityId = 13, SoldTickets = 7, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 14, Name = "Screening 14", VideoEntityId = 14, SoldTickets = 6, ScreeningDate = DateTime.Now.AddDays(20) },
+                new ScreeningEntity { Id = 15, Name = "Screening 15", VideoEntityId = 15, SoldTickets = 5, ScreeningDate = DateTime.Now.AddDays(10) },
+                new ScreeningEntity { Id = 16, Name = "Screening 16", VideoEntityId = 16, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(5) },
+                new ScreeningEntity { Id = 17, Name = "Screening 17", VideoEntityId = 17, SoldTickets = 3, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 18, Name = "Screening 18", VideoEntityId = 18, SoldTickets = 2, ScreeningDate = new DateTime(2015, 10, 10) },
+                new ScreeningEntity { Id = 19, Name = "Screening 19", VideoEntityId = 19, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 20, Name = "Screening 20", VideoEntityId = 20, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(29) },
+                new ScreeningEntity { Id = 21, Name = "Screening 21", VideoEntityId = 21, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 22, Name = "Screening 22", VideoEntityId = 22, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(21) },
+                new ScreeningEntity { Id = 23, Name = "Screening 23", VideoEntityId = 23, SoldTickets = 4, ScreeningDate = new DateTime(2010, 11, 10) },
+                new ScreeningEntity { Id = 24, Name = "Screening 24", VideoEntityId = 24, SoldTickets = 21, ScreeningDate = new DateTime(2012, 1, 1) },
+
+                new ScreeningEntity { Id = 25, Name = "Screening 25", VideoEntityId = 25, SoldTickets = 7, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 26, Name = "Screening 26", VideoEntityId = 26, SoldTickets = 6, ScreeningDate = DateTime.Now.AddDays(20) },
+                new ScreeningEntity { Id = 27, Name = "Screening 27", VideoEntityId = 27, SoldTickets = 5, ScreeningDate = DateTime.Now.AddDays(10) },
+                new ScreeningEntity { Id = 28, Name = "Screening 28", VideoEntityId = 28, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(5) },
+                new ScreeningEntity { Id = 29, Name = "Screening 29", VideoEntityId = 29, SoldTickets = 3, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 30, Name = "Screening 30", VideoEntityId = 30, SoldTickets = 2, ScreeningDate = new DateTime(2015, 10, 10) },
+                new ScreeningEntity { Id = 31, Name = "Screening 31", VideoEntityId = 31, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 32, Name = "Screening 32", VideoEntityId = 32, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(29) },
+                new ScreeningEntity { Id = 33, Name = "Screening 33", VideoEntityId = 33, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 34, Name = "Screening 34", VideoEntityId = 34, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(21) },
+                new ScreeningEntity { Id = 35, Name = "Screening 35", VideoEntityId = 35, SoldTickets = 4, ScreeningDate = new DateTime(2010, 11, 10) },
+                new ScreeningEntity { Id = 36, Name = "Screening 36", VideoEntityId = 36, SoldTickets = 21, ScreeningDate = new DateTime(2012, 1, 1) },
+                new ScreeningEntity { Id = 37, Name = "Screening 37", VideoEntityId = 37, SoldTickets = 7, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 38, Name = "Screening 38", VideoEntityId = 38, SoldTickets = 6, ScreeningDate = DateTime.Now.AddDays(20) },
+                new ScreeningEntity { Id = 39, Name = "Screening 39", VideoEntityId = 39, SoldTickets = 5, ScreeningDate = DateTime.Now.AddDays(10) },
+                new ScreeningEntity { Id = 40, Name = "Screening 40", VideoEntityId = 40, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(5) },
+                new ScreeningEntity { Id = 41, Name = "Screening 41", VideoEntityId = 41, SoldTickets = 3, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 42, Name = "Screening 42", VideoEntityId = 42, SoldTickets = 2, ScreeningDate = new DateTime(2015, 10, 10) },
+                new ScreeningEntity { Id = 43, Name = "Screening 43", VideoEntityId = 43, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 44, Name = "Screening 44", VideoEntityId = 44, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(29) },
+                new ScreeningEntity { Id = 45, Name = "Screening 45", VideoEntityId = 45, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 46, Name = "Screening 46", VideoEntityId = 46, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(21) },
+                new ScreeningEntity { Id = 47, Name = "Screening 47", VideoEntityId = 47, SoldTickets = 4, ScreeningDate = new DateTime(2010, 11, 10) },
+                new ScreeningEntity { Id = 48, Name = "Screening 48", VideoEntityId = 48, SoldTickets = 21, ScreeningDate = new DateTime(2012, 1, 1) },
+
+                new ScreeningEntity { Id = 49, Name = "Screening 49", VideoEntityId = 49, SoldTickets = 7, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 50, Name = "Screening 50", VideoEntityId = 50, SoldTickets = 6, ScreeningDate = DateTime.Now.AddDays(20) },
+                new ScreeningEntity { Id = 51, Name = "Screening 51", VideoEntityId = 51, SoldTickets = 5, ScreeningDate = DateTime.Now.AddDays(10) },
+                new ScreeningEntity { Id = 52, Name = "Screening 52", VideoEntityId = 52, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(5) },
+                new ScreeningEntity { Id = 53, Name = "Screening 53", VideoEntityId = 53, SoldTickets = 3, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 54, Name = "Screening 54", VideoEntityId = 54, SoldTickets = 2, ScreeningDate = new DateTime(2015, 10, 10) },
+                new ScreeningEntity { Id = 55, Name = "Screening 55", VideoEntityId = 55, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 56, Name = "Screening 56", VideoEntityId = 56, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(29) },
+                new ScreeningEntity { Id = 57, Name = "Screening 57", VideoEntityId = 57, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 58, Name = "Screening 58", VideoEntityId = 58, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(21) },
+                new ScreeningEntity { Id = 59, Name = "Screening 59", VideoEntityId = 59, SoldTickets = 4, ScreeningDate = new DateTime(2010, 11, 10) },
+                new ScreeningEntity { Id = 60, Name = "Screening 60", VideoEntityId = 60, SoldTickets = 21, ScreeningDate = new DateTime(2012, 1, 1) },
+                new ScreeningEntity { Id = 61, Name = "Screening 61", VideoEntityId = 61, SoldTickets = 7, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 62, Name = "Screening 62", VideoEntityId = 62, SoldTickets = 6, ScreeningDate = DateTime.Now.AddDays(20) },
+                new ScreeningEntity { Id = 63, Name = "Screening 63", VideoEntityId = 63, SoldTickets = 5, ScreeningDate = DateTime.Now.AddDays(10) },
+                new ScreeningEntity { Id = 64, Name = "Screening 64", VideoEntityId = 64, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(5) },
+                new ScreeningEntity { Id = 65, Name = "Screening 65", VideoEntityId = 65, SoldTickets = 3, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 66, Name = "Screening 66", VideoEntityId = 66, SoldTickets = 2, ScreeningDate = new DateTime(2015, 10, 10) },
+                new ScreeningEntity { Id = 67, Name = "Screening 67", VideoEntityId = 67, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 68, Name = "Screening 68", VideoEntityId = 68, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(29) },
+                new ScreeningEntity { Id = 69, Name = "Screening 69", VideoEntityId = 69, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 70, Name = "Screening 70", VideoEntityId = 70, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(21) },
+                new ScreeningEntity { Id = 71, Name = "Screening 71", VideoEntityId = 71, SoldTickets = 4, ScreeningDate = new DateTime(2010, 11, 10) },
+                new ScreeningEntity { Id = 72, Name = "Screening 72", VideoEntityId = 72, SoldTickets = 21, ScreeningDate = new DateTime(2012, 1, 1) },
+
+                new ScreeningEntity { Id = 73, Name = "Screening 73", VideoEntityId = 73, SoldTickets = 7, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 74, Name = "Screening 74", VideoEntityId = 74, SoldTickets = 6, ScreeningDate = DateTime.Now.AddDays(20) },
+                new ScreeningEntity { Id = 75, Name = "Screening 75", VideoEntityId = 75, SoldTickets = 5, ScreeningDate = DateTime.Now.AddDays(10) },
+                new ScreeningEntity { Id = 76, Name = "Screening 76", VideoEntityId = 76, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(5) },
+                new ScreeningEntity { Id = 77, Name = "Screening 77", VideoEntityId = 77, SoldTickets = 3, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 78, Name = "Screening 78", VideoEntityId = 78, SoldTickets = 2, ScreeningDate = new DateTime(2015, 10, 10) },
+                new ScreeningEntity { Id = 79, Name = "Screening 79", VideoEntityId = 79, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 80, Name = "Screening 80", VideoEntityId = 80, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(29) },
+                new ScreeningEntity { Id = 81, Name = "Screening 81", VideoEntityId = 81, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 82, Name = "Screening 82", VideoEntityId = 82, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(21) },
+                new ScreeningEntity { Id = 83, Name = "Screening 83", VideoEntityId = 83, SoldTickets = 4, ScreeningDate = new DateTime(2010, 11, 10) },
+                new ScreeningEntity { Id = 84, Name = "Screening 84", VideoEntityId = 84, SoldTickets = 21, ScreeningDate = new DateTime(2012, 1, 1) },
+                new ScreeningEntity { Id = 85, Name = "Screening 85", VideoEntityId = 85, SoldTickets = 7, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 86, Name = "Screening 86", VideoEntityId = 86, SoldTickets = 6, ScreeningDate = DateTime.Now.AddDays(20) },
+                new ScreeningEntity { Id = 87, Name = "Screening 87", VideoEntityId = 87, SoldTickets = 5, ScreeningDate = DateTime.Now.AddDays(10) },
+                new ScreeningEntity { Id = 88, Name = "Screening 88", VideoEntityId = 88, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(5) },
+                new ScreeningEntity { Id = 89, Name = "Screening 89", VideoEntityId = 89, SoldTickets = 3, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 90, Name = "Screening 90", VideoEntityId = 90, SoldTickets = 2, ScreeningDate = new DateTime(2015, 10, 10) },
+                new ScreeningEntity { Id = 91, Name = "Screening 91", VideoEntityId = 91, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(30) },
+                new ScreeningEntity { Id = 92, Name = "Screening 92", VideoEntityId = 92, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(29) },
+                new ScreeningEntity { Id = 93, Name = "Screening 93", VideoEntityId = 93, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 94, Name = "Screening 94", VideoEntityId = 94, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(21) },
+                new ScreeningEntity { Id = 95, Name = "Screening 95", VideoEntityId = 95, SoldTickets = 4, ScreeningDate = new DateTime(2010, 11, 10) },
+                new ScreeningEntity { Id = 96, Name = "Screening 96", VideoEntityId = 96, SoldTickets = 21, ScreeningDate = new DateTime(2012, 1, 1) },
+
+                new ScreeningEntity { Id = 97, Name = "Screening 97", VideoEntityId = 97, SoldTickets = 2, ScreeningDate = DateTime.Now.AddDays(1) },
+                new ScreeningEntity { Id = 98, Name = "Screening 98", VideoEntityId = 98, SoldTickets = 4, ScreeningDate = DateTime.Now.AddDays(21) },
+                new ScreeningEntity { Id = 99, Name = "Screening 99", VideoEntityId = 99, SoldTickets = 4, ScreeningDate = new DateTime(2010, 11, 10) },
+                new ScreeningEntity { Id = 100, Name = "Screening 100", VideoEntityId = 100, SoldTickets = 21, ScreeningDate = new DateTime(2012, 1, 1) },
+                new ScreeningEntity { Id = 101, Name = "Screening 101", VideoEntityId = 100, SoldTickets = 21, ScreeningDate = new DateTime(2025, 1, 1, 0, 0, 0, 0) },
+                new ScreeningEntity { Id = 102, Name = "Screening 102", VideoEntityId = 100, SoldTickets = 21, ScreeningDate = new DateTime(2025, 1, 1, 0, 0, 0, 0) },
+                new ScreeningEntity { Id = 103, Name = "Screening 103", VideoEntityId = 100, SoldTickets = 21, ScreeningDate = new DateTime(2025, 1, 1, 0, 0, 0, 0) },
+
+                new ScreeningEntity { Id = 104, Name = "Screening 104", VideoEntityId = 101, SoldTickets = 22, ScreeningDate = new DateTime(2015, 1, 1, 0, 0, 0, 0) },
+                new ScreeningEntity { Id = 105, Name = "Screening 105", VideoEntityId = 101, SoldTickets = 21, ScreeningDate = new DateTime(2021, 1, 1, 0, 0, 0, 0) },
+                new ScreeningEntity { Id = 106, Name = "Screening 106", VideoEntityId = 101, SoldTickets = 11, ScreeningDate = new DateTime(2022, 1, 1, 0, 0, 0, 0) }
             );
             #endregion
         }

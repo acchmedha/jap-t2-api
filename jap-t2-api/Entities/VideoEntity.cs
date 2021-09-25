@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoviesApp.Api.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace JAP_Task_1_MoviesApi.Models
@@ -13,5 +14,6 @@ namespace JAP_Task_1_MoviesApi.Models
         public VideoEnum Type { get; set; }
         public List<ActorEntity> Actors { get; set; }
         public List<RatingEntity> Ratings { get; set; }
+        public List<ScreeningEntity> Screenings { get; set; }
     }
 }
