@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MoviesApp.Api.Entities
 {
-    public class VideosWithMostScreeningsEntity
+    public class MoviesWithMostScreeningsEntity
     {
         public int VideoId { get; set; }
         public string VideoName { get; set; }

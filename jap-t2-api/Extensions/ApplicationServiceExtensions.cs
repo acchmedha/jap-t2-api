@@ -10,9 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.OpenApi.Models;
+using MoviesApp.Api.Services;
 using MoviesApp.Api.Validators;
 using Swashbuckle.AspNetCore.Filters;
-using System.Reflection;
 
 namespace JAP_Task_1_MoviesApi.Extensions
 {
@@ -23,6 +23,8 @@ namespace JAP_Task_1_MoviesApi.Extensions
             services.AddScoped<IVideoService, VideoService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IRatingService, RatingService>();
+            services.AddScoped<IReportService, ReportService>();
+            services.AddScoped<ITicketService, TicketService>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<MoviesAppDbContext>(options =>

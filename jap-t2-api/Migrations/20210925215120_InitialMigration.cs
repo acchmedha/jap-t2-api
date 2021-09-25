@@ -275,7 +275,7 @@ namespace MoviesApp.Api.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CreatedAt", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Username" },
-                values: new object[] { 1, new DateTime(2021, 9, 25, 22, 35, 53, 254, DateTimeKind.Local).AddTicks(8153), "Admin", "Admin", new byte[] { 163, 4, 94, 164, 211, 185, 66, 129, 92, 196, 143, 129, 181, 171, 105, 2, 26, 191, 45, 86, 98, 250, 88, 74, 203, 41, 16, 92, 119, 102, 134, 77, 166, 122, 17, 239, 60, 224, 102, 124, 254, 203, 48, 199, 215, 139, 221, 43, 17, 247, 211, 110, 219, 226, 245, 0, 41, 141, 182, 133, 34, 184, 148, 107 }, new byte[] { 33, 51, 20, 172, 125, 119, 81, 62, 115, 138, 101, 249, 184, 99, 41, 2, 160, 127, 234, 239, 96, 99, 16, 218, 105, 95, 134, 202, 19, 204, 96, 66, 207, 145, 12, 214, 175, 45, 173, 94, 62, 184, 249, 25, 43, 248, 145, 114, 63, 18, 244, 126, 209, 95, 208, 167, 229, 165, 160, 219, 208, 160, 57, 63, 18, 221, 83, 100, 117, 52, 64, 224, 103, 217, 144, 28, 84, 140, 224, 74, 181, 42, 242, 2, 168, 50, 238, 30, 40, 40, 138, 45, 111, 152, 13, 163, 48, 113, 198, 73, 61, 155, 83, 87, 71, 108, 234, 66, 194, 116, 150, 58, 134, 121, 220, 62, 149, 156, 219, 172, 50, 244, 136, 84, 91, 118, 201, 104 }, "admin" });
+                values: new object[] { 1, new DateTime(2021, 9, 25, 23, 51, 19, 775, DateTimeKind.Local).AddTicks(4640), "Admin", "Admin", new byte[] { 57, 200, 209, 81, 47, 197, 9, 159, 187, 230, 162, 22, 12, 63, 188, 217, 14, 134, 49, 230, 246, 61, 164, 232, 141, 217, 188, 137, 12, 202, 12, 77, 225, 44, 34, 77, 41, 66, 237, 55, 243, 30, 117, 11, 223, 120, 125, 106, 29, 63, 150, 189, 72, 48, 223, 41, 112, 148, 4, 79, 58, 116, 151, 78 }, new byte[] { 137, 250, 142, 61, 124, 62, 232, 183, 233, 247, 88, 205, 213, 244, 96, 233, 70, 103, 108, 165, 127, 67, 1, 44, 109, 196, 98, 50, 168, 100, 45, 217, 4, 53, 63, 17, 80, 228, 108, 9, 75, 79, 144, 39, 38, 136, 25, 250, 181, 122, 115, 128, 239, 163, 194, 186, 138, 62, 76, 202, 251, 166, 80, 37, 79, 185, 70, 37, 180, 110, 222, 237, 192, 179, 150, 167, 48, 125, 111, 227, 87, 79, 49, 214, 192, 168, 63, 186, 214, 105, 90, 48, 192, 61, 133, 142, 226, 223, 155, 53, 94, 140, 110, 113, 167, 199, 219, 59, 162, 129, 229, 181, 165, 23, 217, 204, 153, 90, 34, 98, 99, 39, 28, 20, 247, 147, 76, 122 }, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Videos",
@@ -526,6 +526,133 @@ namespace MoviesApp.Api.Migrations
                     { 29, 1, 4.2000000000000002, 29 },
                     { 91, 1, 4.7999999999999998, 91 },
                     { 28, 1, 4.0999999999999996, 28 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Screenings",
+                columns: new[] { "Id", "Name", "ScreeningDate", "SoldTickets", "VideoEntityId" },
+                values: new object[,]
+                {
+                    { 90, "Screening 90", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 90 },
+                    { 100, "Screening 100", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 100 },
+                    { 86, "Screening 86", new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7466), 6, 86 },
+                    { 73, "Screening 73", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7425), 7, 73 },
+                    { 81, "Screening 81", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7453), 2, 81 },
+                    { 101, "Screening 101", new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 100 },
+                    { 102, "Screening 102", new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 100 },
+                    { 71, "Screening 71", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 71 },
+                    { 87, "Screening 87", new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7470), 5, 87 },
+                    { 103, "Screening 103", new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 100 },
+                    { 70, "Screening 70", new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7416), 4, 70 },
+                    { 89, "Screening 89", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7477), 3, 89 },
+                    { 104, "Screening 104", new DateTime(2015, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 22, 101 },
+                    { 72, "Screening 72", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 72 },
+                    { 69, "Screening 69", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7411), 2, 69 },
+                    { 75, "Screening 75", new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7432), 5, 75 },
+                    { 74, "Screening 74", new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7429), 6, 74 },
+                    { 93, "Screening 93", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7491), 2, 93 },
+                    { 94, "Screening 94", new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7494), 4, 94 },
+                    { 82, "Screening 82", new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7456), 4, 82 },
+                    { 80, "Screening 80", new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7449), 2, 80 },
+                    { 95, "Screening 95", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 95 },
+                    { 79, "Screening 79", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7445), 2, 79 },
+                    { 83, "Screening 83", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 83 },
+                    { 92, "Screening 92", new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7487), 2, 92 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Screenings",
+                columns: new[] { "Id", "Name", "ScreeningDate", "SoldTickets", "VideoEntityId" },
+                values: new object[,]
+                {
+                    { 78, "Screening 78", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 78 },
+                    { 96, "Screening 96", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 96 },
+                    { 77, "Screening 77", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7440), 3, 77 },
+                    { 84, "Screening 84", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 84 },
+                    { 97, "Screening 97", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7500), 2, 97 },
+                    { 76, "Screening 76", new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7436), 4, 76 },
+                    { 91, "Screening 91", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7483), 2, 91 },
+                    { 98, "Screening 98", new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7505), 4, 98 },
+                    { 85, "Screening 85", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7462), 7, 85 },
+                    { 99, "Screening 99", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 99 },
+                    { 88, "Screening 88", new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7473), 4, 88 },
+                    { 52, "Screening 52", new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7357), 4, 52 },
+                    { 67, "Screening 67", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7403), 2, 67 },
+                    { 31, "Screening 31", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7216), 2, 31 },
+                    { 30, "Screening 30", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 30 },
+                    { 29, "Screening 29", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7212), 3, 29 },
+                    { 28, "Screening 28", new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7208), 4, 28 },
+                    { 27, "Screening 27", new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7203), 5, 27 },
+                    { 26, "Screening 26", new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7199), 6, 26 },
+                    { 25, "Screening 25", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7195), 7, 25 },
+                    { 24, "Screening 24", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 24 },
+                    { 23, "Screening 23", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 23 },
+                    { 22, "Screening 22", new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7190), 4, 22 },
+                    { 21, "Screening 21", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7186), 2, 21 },
+                    { 20, "Screening 20", new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7183), 2, 20 },
+                    { 19, "Screening 19", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7178), 2, 19 },
+                    { 18, "Screening 18", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 18 },
+                    { 17, "Screening 17", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7173), 3, 17 },
+                    { 16, "Screening 16", new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7168), 4, 16 },
+                    { 15, "Screening 15", new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7165), 5, 15 },
+                    { 1, "Screening 1", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(6735), 7, 1 },
+                    { 2, "Screening 2", new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7113), 6, 2 },
+                    { 3, "Screening 3", new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7127), 5, 3 },
+                    { 4, "Screening 4", new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7131), 4, 4 },
+                    { 5, "Screening 5", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7135), 3, 5 },
+                    { 6, "Screening 6", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 6 },
+                    { 32, "Screening 32", new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7220), 2, 32 },
+                    { 7, "Screening 7", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7140), 2, 7 },
+                    { 9, "Screening 9", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7147), 2, 9 },
+                    { 10, "Screening 10", new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7151), 4, 10 },
+                    { 11, "Screening 11", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 11 },
+                    { 12, "Screening 12", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 12 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Screenings",
+                columns: new[] { "Id", "Name", "ScreeningDate", "SoldTickets", "VideoEntityId" },
+                values: new object[,]
+                {
+                    { 13, "Screening 13", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7156), 7, 13 },
+                    { 14, "Screening 14", new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7161), 6, 14 },
+                    { 8, "Screening 8", new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7143), 2, 8 },
+                    { 68, "Screening 68", new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7408), 2, 68 },
+                    { 33, "Screening 33", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7224), 2, 33 },
+                    { 35, "Screening 35", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 35 },
+                    { 66, "Screening 66", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 66 },
+                    { 65, "Screening 65", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7399), 3, 65 },
+                    { 64, "Screening 64", new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7395), 4, 64 },
+                    { 63, "Screening 63", new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7392), 5, 63 },
+                    { 62, "Screening 62", new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7387), 6, 62 },
+                    { 61, "Screening 61", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7383), 7, 61 },
+                    { 60, "Screening 60", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 60 },
+                    { 59, "Screening 59", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 59 },
+                    { 58, "Screening 58", new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7377), 4, 58 },
+                    { 57, "Screening 57", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7373), 2, 57 },
+                    { 56, "Screening 56", new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7370), 2, 56 },
+                    { 55, "Screening 55", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7366), 2, 55 },
+                    { 54, "Screening 54", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 54 },
+                    { 53, "Screening 53", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7361), 3, 53 },
+                    { 105, "Screening 105", new DateTime(2021, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 101 },
+                    { 51, "Screening 51", new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7350), 5, 51 },
+                    { 50, "Screening 50", new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7345), 6, 50 },
+                    { 36, "Screening 36", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 36 },
+                    { 37, "Screening 37", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7235), 7, 37 },
+                    { 38, "Screening 38", new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7310), 6, 38 },
+                    { 39, "Screening 39", new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7315), 5, 39 },
+                    { 40, "Screening 40", new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7318), 4, 40 },
+                    { 41, "Screening 41", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7322), 3, 41 },
+                    { 34, "Screening 34", new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7228), 4, 34 },
+                    { 42, "Screening 42", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 42 },
+                    { 44, "Screening 44", new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7330), 2, 44 },
+                    { 45, "Screening 45", new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7333), 2, 45 },
+                    { 46, "Screening 46", new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7337), 4, 46 },
+                    { 47, "Screening 47", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 47 },
+                    { 48, "Screening 48", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 48 },
+                    { 49, "Screening 49", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7342), 7, 49 },
+                    { 43, "Screening 43", new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7326), 2, 43 },
+                    { 106, "Screening 106", new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 11, 101 }
                 });
 
             migrationBuilder.InsertData(
@@ -792,132 +919,6 @@ namespace MoviesApp.Api.Migrations
                 { 20, 101 }
             });
 
-            migrationBuilder.InsertData(
-                table: "Screenings",
-                columns: new[] { "Id", "Name", "ScreeningDate", "SoldTickets", "VideoEntityId" },
-                values: new object[,]
-                {
-                    { 90, "Screening 90", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 90 },
-                    { 100, "Screening 100", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 100 },
-                    { 86, "Screening 86", new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3201), 6, 86 },
-                    { 73, "Screening 73", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3159), 7, 73 },
-                    { 81, "Screening 81", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3188), 2, 81 },
-                    { 101, "Screening 101", new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 100 },
-                    { 102, "Screening 102", new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 100 },
-                    { 71, "Screening 71", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 71 },
-                    { 87, "Screening 87", new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3207), 5, 87 },
-                    { 103, "Screening 103", new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 100 },
-                    { 70, "Screening 70", new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3154), 4, 70 },
-                    { 89, "Screening 89", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3215), 3, 89 },
-                    { 104, "Screening 104", new DateTime(2015, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 22, 101 },
-                    { 72, "Screening 72", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 72 },
-                    { 69, "Screening 69", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3150), 2, 69 },
-                    { 75, "Screening 75", new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3167), 5, 75 },
-                    { 74, "Screening 74", new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3163), 6, 74 },
-                    { 93, "Screening 93", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3229), 2, 93 },
-                    { 94, "Screening 94", new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3233), 4, 94 },
-                    { 82, "Screening 82", new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3192), 4, 82 },
-                    { 80, "Screening 80", new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3184), 2, 80 },
-                    { 95, "Screening 95", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 95 },
-                    { 79, "Screening 79", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3180), 2, 79 },
-                    { 83, "Screening 83", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 83 },
-                    { 92, "Screening 92", new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3225), 2, 92 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Screenings",
-                columns: new[] { "Id", "Name", "ScreeningDate", "SoldTickets", "VideoEntityId" },
-                values: new object[,]
-                {
-                    { 78, "Screening 78", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 78 },
-                    { 96, "Screening 96", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 96 },
-                    { 77, "Screening 77", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3175), 3, 77 },
-                    { 84, "Screening 84", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 84 },
-                    { 97, "Screening 97", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3238), 2, 97 },
-                    { 76, "Screening 76", new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3171), 4, 76 },
-                    { 91, "Screening 91", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3221), 2, 91 },
-                    { 98, "Screening 98", new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3242), 4, 98 },
-                    { 85, "Screening 85", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3197), 7, 85 },
-                    { 99, "Screening 99", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 99 },
-                    { 88, "Screening 88", new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3211), 4, 88 },
-                    { 52, "Screening 52", new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3089), 4, 52 },
-                    { 67, "Screening 67", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3142), 2, 67 },
-                    { 31, "Screening 31", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3018), 2, 31 },
-                    { 30, "Screening 30", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 30 },
-                    { 29, "Screening 29", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3013), 3, 29 },
-                    { 28, "Screening 28", new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3009), 4, 28 },
-                    { 27, "Screening 27", new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3005), 5, 27 },
-                    { 26, "Screening 26", new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3000), 6, 26 },
-                    { 25, "Screening 25", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2994), 7, 25 },
-                    { 24, "Screening 24", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 24 },
-                    { 23, "Screening 23", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 23 },
-                    { 22, "Screening 22", new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2989), 4, 22 },
-                    { 21, "Screening 21", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2984), 2, 21 },
-                    { 20, "Screening 20", new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2980), 2, 20 },
-                    { 19, "Screening 19", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2976), 2, 19 },
-                    { 18, "Screening 18", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 18 },
-                    { 17, "Screening 17", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2971), 3, 17 },
-                    { 16, "Screening 16", new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2967), 4, 16 },
-                    { 15, "Screening 15", new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2962), 5, 15 },
-                    { 1, "Screening 1", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2477), 7, 1 },
-                    { 2, "Screening 2", new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2900), 6, 2 },
-                    { 3, "Screening 3", new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2918), 5, 3 },
-                    { 4, "Screening 4", new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2922), 4, 4 },
-                    { 5, "Screening 5", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2927), 3, 5 },
-                    { 6, "Screening 6", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 6 },
-                    { 32, "Screening 32", new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3022), 2, 32 },
-                    { 7, "Screening 7", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2934), 2, 7 },
-                    { 9, "Screening 9", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2944), 2, 9 },
-                    { 10, "Screening 10", new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2948), 4, 10 },
-                    { 11, "Screening 11", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 11 },
-                    { 12, "Screening 12", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 12 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Screenings",
-                columns: new[] { "Id", "Name", "ScreeningDate", "SoldTickets", "VideoEntityId" },
-                values: new object[,]
-                {
-                    { 13, "Screening 13", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2954), 7, 13 },
-                    { 14, "Screening 14", new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2958), 6, 14 },
-                    { 8, "Screening 8", new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2939), 2, 8 },
-                    { 68, "Screening 68", new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3146), 2, 68 },
-                    { 33, "Screening 33", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3026), 2, 33 },
-                    { 35, "Screening 35", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 35 },
-                    { 66, "Screening 66", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 66 },
-                    { 65, "Screening 65", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3137), 3, 65 },
-                    { 64, "Screening 64", new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3133), 4, 64 },
-                    { 63, "Screening 63", new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3128), 5, 63 },
-                    { 62, "Screening 62", new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3124), 6, 62 },
-                    { 61, "Screening 61", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3118), 7, 61 },
-                    { 60, "Screening 60", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 60 },
-                    { 59, "Screening 59", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 59 },
-                    { 58, "Screening 58", new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3112), 4, 58 },
-                    { 57, "Screening 57", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3108), 2, 57 },
-                    { 56, "Screening 56", new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3104), 2, 56 },
-                    { 55, "Screening 55", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3100), 2, 55 },
-                    { 54, "Screening 54", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 54 },
-                    { 53, "Screening 53", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3094), 3, 53 },
-                    { 105, "Screening 105", new DateTime(2021, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 101 },
-                    { 51, "Screening 51", new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3085), 5, 51 },
-                    { 50, "Screening 50", new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3081), 6, 50 },
-                    { 36, "Screening 36", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 36 },
-                    { 37, "Screening 37", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3035), 7, 37 },
-                    { 38, "Screening 38", new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3039), 6, 38 },
-                    { 39, "Screening 39", new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3042), 5, 39 },
-                    { 40, "Screening 40", new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3046), 4, 40 },
-                    { 41, "Screening 41", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3050), 3, 41 },
-                    { 34, "Screening 34", new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3029), 4, 34 },
-                    { 42, "Screening 42", new DateTime(2015, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 42 },
-                    { 44, "Screening 44", new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3061), 2, 44 },
-                    { 45, "Screening 45", new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3065), 2, 45 },
-                    { 46, "Screening 46", new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3071), 4, 46 },
-                    { 47, "Screening 47", new DateTime(2010, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 47 },
-                    { 48, "Screening 48", new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 21, 48 },
-                    { 49, "Screening 49", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3077), 7, 49 },
-                    { 43, "Screening 43", new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3057), 2, 43 },
-                    { 106, "Screening 106", new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 11, 101 }
-                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_ActorEntityVideoEntity_VideosId",
@@ -943,7 +944,8 @@ namespace MoviesApp.Api.Migrations
                 name: "IX_Tickets_ScreeningEntityId",
                 table: "Tickets",
                 column: "ScreeningEntityId");
-            string getTop10VideosWithMostRatings = @"CREATE PROCEDURE getTop10VideosWithMostRatings
+
+            string getTop10MoviesWithMostRatings = @"CREATE PROCEDURE getTop10MoviesWithMostRatings
                                                      AS
                                                      BEGIN
 	                                                    SELECT TOP(10) v.Id as VideoId, v.Title as VideoName, COUNT(r.Value) AS NumberOfRatings, AVG(r.Value) AS AverageRating
@@ -952,7 +954,7 @@ namespace MoviesApp.Api.Migrations
                                                         GROUP BY v.Id, v.Title
                                                         ORDER BY AVG(r.Value) DESC
                                                      END;";
-            string getTop10VideosWithMostScreenings = @"CREATE PROCEDURE getTop10VideosWithMostScreenings
+            string getTop10MoviesWithMostScreenings = @"CREATE PROCEDURE getTop10MoviesWithMostScreenings
                                                         @start_date Date,
                                                         @end_date Date
                                                         AS
@@ -965,7 +967,7 @@ namespace MoviesApp.Api.Migrations
                                                             ORDER BY COUNT(s.Id) DESC
                                                         END;";
 
-            string getVideosWithMostSoldTicketsNoRating = @"CREATE PROCEDURE getVideosWithMostSoldTicketsNoRating
+            string getMoviesWithMostSoldTicketsNoRating = @"CREATE PROCEDURE getMoviesWithMostSoldTicketsNoRating
                                                             AS
                                                             BEGIN
 	                                                            SELECT v.Id as VideoId, v.Title as VideoName, s.Name as ScreeningName, s.SoldTickets as SoldTickets
@@ -977,9 +979,9 @@ namespace MoviesApp.Api.Migrations
                                                                 ORDER BY s.SoldTickets DESC
                                                             END;";
 
-            migrationBuilder.Sql(getTop10VideosWithMostRatings);
-            migrationBuilder.Sql(getTop10VideosWithMostScreenings);
-            migrationBuilder.Sql(getVideosWithMostSoldTicketsNoRating);
+            migrationBuilder.Sql(getTop10MoviesWithMostRatings);
+            migrationBuilder.Sql(getTop10MoviesWithMostScreenings);
+            migrationBuilder.Sql(getMoviesWithMostSoldTicketsNoRating);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

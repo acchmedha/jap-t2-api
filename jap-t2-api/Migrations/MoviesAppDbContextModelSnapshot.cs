@@ -1241,11 +1241,11 @@ namespace MoviesApp.Api.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2021, 9, 25, 22, 35, 53, 254, DateTimeKind.Local).AddTicks(8153),
+                            CreatedAt = new DateTime(2021, 9, 25, 23, 51, 19, 775, DateTimeKind.Local).AddTicks(4640),
                             FirstName = "Admin",
                             LastName = "Admin",
-                            PasswordHash = new byte[] { 163, 4, 94, 164, 211, 185, 66, 129, 92, 196, 143, 129, 181, 171, 105, 2, 26, 191, 45, 86, 98, 250, 88, 74, 203, 41, 16, 92, 119, 102, 134, 77, 166, 122, 17, 239, 60, 224, 102, 124, 254, 203, 48, 199, 215, 139, 221, 43, 17, 247, 211, 110, 219, 226, 245, 0, 41, 141, 182, 133, 34, 184, 148, 107 },
-                            PasswordSalt = new byte[] { 33, 51, 20, 172, 125, 119, 81, 62, 115, 138, 101, 249, 184, 99, 41, 2, 160, 127, 234, 239, 96, 99, 16, 218, 105, 95, 134, 202, 19, 204, 96, 66, 207, 145, 12, 214, 175, 45, 173, 94, 62, 184, 249, 25, 43, 248, 145, 114, 63, 18, 244, 126, 209, 95, 208, 167, 229, 165, 160, 219, 208, 160, 57, 63, 18, 221, 83, 100, 117, 52, 64, 224, 103, 217, 144, 28, 84, 140, 224, 74, 181, 42, 242, 2, 168, 50, 238, 30, 40, 40, 138, 45, 111, 152, 13, 163, 48, 113, 198, 73, 61, 155, 83, 87, 71, 108, 234, 66, 194, 116, 150, 58, 134, 121, 220, 62, 149, 156, 219, 172, 50, 244, 136, 84, 91, 118, 201, 104 },
+                            PasswordHash = new byte[] { 57, 200, 209, 81, 47, 197, 9, 159, 187, 230, 162, 22, 12, 63, 188, 217, 14, 134, 49, 230, 246, 61, 164, 232, 141, 217, 188, 137, 12, 202, 12, 77, 225, 44, 34, 77, 41, 66, 237, 55, 243, 30, 117, 11, 223, 120, 125, 106, 29, 63, 150, 189, 72, 48, 223, 41, 112, 148, 4, 79, 58, 116, 151, 78 },
+                            PasswordSalt = new byte[] { 137, 250, 142, 61, 124, 62, 232, 183, 233, 247, 88, 205, 213, 244, 96, 233, 70, 103, 108, 165, 127, 67, 1, 44, 109, 196, 98, 50, 168, 100, 45, 217, 4, 53, 63, 17, 80, 228, 108, 9, 75, 79, 144, 39, 38, 136, 25, 250, 181, 122, 115, 128, 239, 163, 194, 186, 138, 62, 76, 202, 251, 166, 80, 37, 79, 185, 70, 37, 180, 110, 222, 237, 192, 179, 150, 167, 48, 125, 111, 227, 87, 79, 49, 214, 192, 168, 63, 186, 214, 105, 90, 48, 192, 61, 133, 142, 226, 223, 155, 53, 94, 140, 110, 113, 167, 199, 219, 59, 162, 129, 229, 181, 165, 23, 217, 204, 153, 90, 34, 98, 99, 39, 28, 20, 247, 147, 76, 122 },
                             Username = "admin"
                         });
                 });
@@ -2188,7 +2188,7 @@ namespace MoviesApp.Api.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MoviesApp.Api.Entities.MostRatedVideoEntity", b =>
+            modelBuilder.Entity("MoviesApp.Api.Entities.MostRatedMoviesEntity", b =>
                 {
                     b.Property<double>("AverageRating")
                         .HasColumnType("float");
@@ -2203,6 +2203,37 @@ namespace MoviesApp.Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.ToTable("MostRatedVideos");
+                });
+
+            modelBuilder.Entity("MoviesApp.Api.Entities.MoviesWithMostScreeningsEntity", b =>
+                {
+                    b.Property<int>("NumberOfScreenings")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VideoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VideoName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("VideosWithMostScreenings");
+                });
+
+            modelBuilder.Entity("MoviesApp.Api.Entities.MoviesWithMostSoldTicketsEntity", b =>
+                {
+                    b.Property<string>("ScreeningName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SoldTickets")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VideoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VideoName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("VideosWithMostSoldTickets");
                 });
 
             modelBuilder.Entity("MoviesApp.Api.Entities.ScreeningEntity", b =>
@@ -2235,7 +2266,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 1,
                             Name = "Screening 1",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2477),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(6735),
                             SoldTickets = 7,
                             VideoEntityId = 1
                         },
@@ -2243,7 +2274,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 2,
                             Name = "Screening 2",
-                            ScreeningDate = new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2900),
+                            ScreeningDate = new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7113),
                             SoldTickets = 6,
                             VideoEntityId = 2
                         },
@@ -2251,7 +2282,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 3,
                             Name = "Screening 3",
-                            ScreeningDate = new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2918),
+                            ScreeningDate = new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7127),
                             SoldTickets = 5,
                             VideoEntityId = 3
                         },
@@ -2259,7 +2290,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 4,
                             Name = "Screening 4",
-                            ScreeningDate = new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2922),
+                            ScreeningDate = new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7131),
                             SoldTickets = 4,
                             VideoEntityId = 4
                         },
@@ -2267,7 +2298,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 5,
                             Name = "Screening 5",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2927),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7135),
                             SoldTickets = 3,
                             VideoEntityId = 5
                         },
@@ -2283,7 +2314,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 7,
                             Name = "Screening 7",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2934),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7140),
                             SoldTickets = 2,
                             VideoEntityId = 7
                         },
@@ -2291,7 +2322,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 8,
                             Name = "Screening 8",
-                            ScreeningDate = new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2939),
+                            ScreeningDate = new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7143),
                             SoldTickets = 2,
                             VideoEntityId = 8
                         },
@@ -2299,7 +2330,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 9,
                             Name = "Screening 9",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2944),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7147),
                             SoldTickets = 2,
                             VideoEntityId = 9
                         },
@@ -2307,7 +2338,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 10,
                             Name = "Screening 10",
-                            ScreeningDate = new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2948),
+                            ScreeningDate = new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7151),
                             SoldTickets = 4,
                             VideoEntityId = 10
                         },
@@ -2331,7 +2362,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 13,
                             Name = "Screening 13",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2954),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7156),
                             SoldTickets = 7,
                             VideoEntityId = 13
                         },
@@ -2339,7 +2370,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 14,
                             Name = "Screening 14",
-                            ScreeningDate = new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2958),
+                            ScreeningDate = new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7161),
                             SoldTickets = 6,
                             VideoEntityId = 14
                         },
@@ -2347,7 +2378,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 15,
                             Name = "Screening 15",
-                            ScreeningDate = new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2962),
+                            ScreeningDate = new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7165),
                             SoldTickets = 5,
                             VideoEntityId = 15
                         },
@@ -2355,7 +2386,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 16,
                             Name = "Screening 16",
-                            ScreeningDate = new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2967),
+                            ScreeningDate = new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7168),
                             SoldTickets = 4,
                             VideoEntityId = 16
                         },
@@ -2363,7 +2394,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 17,
                             Name = "Screening 17",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2971),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7173),
                             SoldTickets = 3,
                             VideoEntityId = 17
                         },
@@ -2379,7 +2410,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 19,
                             Name = "Screening 19",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2976),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7178),
                             SoldTickets = 2,
                             VideoEntityId = 19
                         },
@@ -2387,7 +2418,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 20,
                             Name = "Screening 20",
-                            ScreeningDate = new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2980),
+                            ScreeningDate = new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7183),
                             SoldTickets = 2,
                             VideoEntityId = 20
                         },
@@ -2395,7 +2426,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 21,
                             Name = "Screening 21",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2984),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7186),
                             SoldTickets = 2,
                             VideoEntityId = 21
                         },
@@ -2403,7 +2434,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 22,
                             Name = "Screening 22",
-                            ScreeningDate = new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2989),
+                            ScreeningDate = new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7190),
                             SoldTickets = 4,
                             VideoEntityId = 22
                         },
@@ -2427,7 +2458,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 25,
                             Name = "Screening 25",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(2994),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7195),
                             SoldTickets = 7,
                             VideoEntityId = 25
                         },
@@ -2435,7 +2466,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 26,
                             Name = "Screening 26",
-                            ScreeningDate = new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3000),
+                            ScreeningDate = new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7199),
                             SoldTickets = 6,
                             VideoEntityId = 26
                         },
@@ -2443,7 +2474,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 27,
                             Name = "Screening 27",
-                            ScreeningDate = new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3005),
+                            ScreeningDate = new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7203),
                             SoldTickets = 5,
                             VideoEntityId = 27
                         },
@@ -2451,7 +2482,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 28,
                             Name = "Screening 28",
-                            ScreeningDate = new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3009),
+                            ScreeningDate = new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7208),
                             SoldTickets = 4,
                             VideoEntityId = 28
                         },
@@ -2459,7 +2490,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 29,
                             Name = "Screening 29",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3013),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7212),
                             SoldTickets = 3,
                             VideoEntityId = 29
                         },
@@ -2475,7 +2506,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 31,
                             Name = "Screening 31",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3018),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7216),
                             SoldTickets = 2,
                             VideoEntityId = 31
                         },
@@ -2483,7 +2514,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 32,
                             Name = "Screening 32",
-                            ScreeningDate = new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3022),
+                            ScreeningDate = new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7220),
                             SoldTickets = 2,
                             VideoEntityId = 32
                         },
@@ -2491,7 +2522,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 33,
                             Name = "Screening 33",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3026),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7224),
                             SoldTickets = 2,
                             VideoEntityId = 33
                         },
@@ -2499,7 +2530,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 34,
                             Name = "Screening 34",
-                            ScreeningDate = new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3029),
+                            ScreeningDate = new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7228),
                             SoldTickets = 4,
                             VideoEntityId = 34
                         },
@@ -2523,7 +2554,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 37,
                             Name = "Screening 37",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3035),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7235),
                             SoldTickets = 7,
                             VideoEntityId = 37
                         },
@@ -2531,7 +2562,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 38,
                             Name = "Screening 38",
-                            ScreeningDate = new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3039),
+                            ScreeningDate = new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7310),
                             SoldTickets = 6,
                             VideoEntityId = 38
                         },
@@ -2539,7 +2570,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 39,
                             Name = "Screening 39",
-                            ScreeningDate = new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3042),
+                            ScreeningDate = new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7315),
                             SoldTickets = 5,
                             VideoEntityId = 39
                         },
@@ -2547,7 +2578,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 40,
                             Name = "Screening 40",
-                            ScreeningDate = new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3046),
+                            ScreeningDate = new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7318),
                             SoldTickets = 4,
                             VideoEntityId = 40
                         },
@@ -2555,7 +2586,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 41,
                             Name = "Screening 41",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3050),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7322),
                             SoldTickets = 3,
                             VideoEntityId = 41
                         },
@@ -2571,7 +2602,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 43,
                             Name = "Screening 43",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3057),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7326),
                             SoldTickets = 2,
                             VideoEntityId = 43
                         },
@@ -2579,7 +2610,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 44,
                             Name = "Screening 44",
-                            ScreeningDate = new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3061),
+                            ScreeningDate = new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7330),
                             SoldTickets = 2,
                             VideoEntityId = 44
                         },
@@ -2587,7 +2618,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 45,
                             Name = "Screening 45",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3065),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7333),
                             SoldTickets = 2,
                             VideoEntityId = 45
                         },
@@ -2595,7 +2626,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 46,
                             Name = "Screening 46",
-                            ScreeningDate = new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3071),
+                            ScreeningDate = new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7337),
                             SoldTickets = 4,
                             VideoEntityId = 46
                         },
@@ -2619,7 +2650,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 49,
                             Name = "Screening 49",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3077),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7342),
                             SoldTickets = 7,
                             VideoEntityId = 49
                         },
@@ -2627,7 +2658,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 50,
                             Name = "Screening 50",
-                            ScreeningDate = new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3081),
+                            ScreeningDate = new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7345),
                             SoldTickets = 6,
                             VideoEntityId = 50
                         },
@@ -2635,7 +2666,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 51,
                             Name = "Screening 51",
-                            ScreeningDate = new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3085),
+                            ScreeningDate = new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7350),
                             SoldTickets = 5,
                             VideoEntityId = 51
                         },
@@ -2643,7 +2674,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 52,
                             Name = "Screening 52",
-                            ScreeningDate = new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3089),
+                            ScreeningDate = new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7357),
                             SoldTickets = 4,
                             VideoEntityId = 52
                         },
@@ -2651,7 +2682,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 53,
                             Name = "Screening 53",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3094),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7361),
                             SoldTickets = 3,
                             VideoEntityId = 53
                         },
@@ -2667,7 +2698,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 55,
                             Name = "Screening 55",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3100),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7366),
                             SoldTickets = 2,
                             VideoEntityId = 55
                         },
@@ -2675,7 +2706,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 56,
                             Name = "Screening 56",
-                            ScreeningDate = new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3104),
+                            ScreeningDate = new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7370),
                             SoldTickets = 2,
                             VideoEntityId = 56
                         },
@@ -2683,7 +2714,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 57,
                             Name = "Screening 57",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3108),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7373),
                             SoldTickets = 2,
                             VideoEntityId = 57
                         },
@@ -2691,7 +2722,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 58,
                             Name = "Screening 58",
-                            ScreeningDate = new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3112),
+                            ScreeningDate = new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7377),
                             SoldTickets = 4,
                             VideoEntityId = 58
                         },
@@ -2715,7 +2746,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 61,
                             Name = "Screening 61",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3118),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7383),
                             SoldTickets = 7,
                             VideoEntityId = 61
                         },
@@ -2723,7 +2754,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 62,
                             Name = "Screening 62",
-                            ScreeningDate = new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3124),
+                            ScreeningDate = new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7387),
                             SoldTickets = 6,
                             VideoEntityId = 62
                         },
@@ -2731,7 +2762,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 63,
                             Name = "Screening 63",
-                            ScreeningDate = new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3128),
+                            ScreeningDate = new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7392),
                             SoldTickets = 5,
                             VideoEntityId = 63
                         },
@@ -2739,7 +2770,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 64,
                             Name = "Screening 64",
-                            ScreeningDate = new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3133),
+                            ScreeningDate = new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7395),
                             SoldTickets = 4,
                             VideoEntityId = 64
                         },
@@ -2747,7 +2778,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 65,
                             Name = "Screening 65",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3137),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7399),
                             SoldTickets = 3,
                             VideoEntityId = 65
                         },
@@ -2763,7 +2794,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 67,
                             Name = "Screening 67",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3142),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7403),
                             SoldTickets = 2,
                             VideoEntityId = 67
                         },
@@ -2771,7 +2802,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 68,
                             Name = "Screening 68",
-                            ScreeningDate = new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3146),
+                            ScreeningDate = new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7408),
                             SoldTickets = 2,
                             VideoEntityId = 68
                         },
@@ -2779,7 +2810,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 69,
                             Name = "Screening 69",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3150),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7411),
                             SoldTickets = 2,
                             VideoEntityId = 69
                         },
@@ -2787,7 +2818,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 70,
                             Name = "Screening 70",
-                            ScreeningDate = new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3154),
+                            ScreeningDate = new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7416),
                             SoldTickets = 4,
                             VideoEntityId = 70
                         },
@@ -2811,7 +2842,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 73,
                             Name = "Screening 73",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3159),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7425),
                             SoldTickets = 7,
                             VideoEntityId = 73
                         },
@@ -2819,7 +2850,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 74,
                             Name = "Screening 74",
-                            ScreeningDate = new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3163),
+                            ScreeningDate = new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7429),
                             SoldTickets = 6,
                             VideoEntityId = 74
                         },
@@ -2827,7 +2858,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 75,
                             Name = "Screening 75",
-                            ScreeningDate = new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3167),
+                            ScreeningDate = new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7432),
                             SoldTickets = 5,
                             VideoEntityId = 75
                         },
@@ -2835,7 +2866,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 76,
                             Name = "Screening 76",
-                            ScreeningDate = new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3171),
+                            ScreeningDate = new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7436),
                             SoldTickets = 4,
                             VideoEntityId = 76
                         },
@@ -2843,7 +2874,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 77,
                             Name = "Screening 77",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3175),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7440),
                             SoldTickets = 3,
                             VideoEntityId = 77
                         },
@@ -2859,7 +2890,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 79,
                             Name = "Screening 79",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3180),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7445),
                             SoldTickets = 2,
                             VideoEntityId = 79
                         },
@@ -2867,7 +2898,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 80,
                             Name = "Screening 80",
-                            ScreeningDate = new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3184),
+                            ScreeningDate = new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7449),
                             SoldTickets = 2,
                             VideoEntityId = 80
                         },
@@ -2875,7 +2906,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 81,
                             Name = "Screening 81",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3188),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7453),
                             SoldTickets = 2,
                             VideoEntityId = 81
                         },
@@ -2883,7 +2914,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 82,
                             Name = "Screening 82",
-                            ScreeningDate = new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3192),
+                            ScreeningDate = new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7456),
                             SoldTickets = 4,
                             VideoEntityId = 82
                         },
@@ -2907,7 +2938,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 85,
                             Name = "Screening 85",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3197),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7462),
                             SoldTickets = 7,
                             VideoEntityId = 85
                         },
@@ -2915,7 +2946,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 86,
                             Name = "Screening 86",
-                            ScreeningDate = new DateTime(2021, 10, 15, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3201),
+                            ScreeningDate = new DateTime(2021, 10, 15, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7466),
                             SoldTickets = 6,
                             VideoEntityId = 86
                         },
@@ -2923,7 +2954,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 87,
                             Name = "Screening 87",
-                            ScreeningDate = new DateTime(2021, 10, 5, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3207),
+                            ScreeningDate = new DateTime(2021, 10, 5, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7470),
                             SoldTickets = 5,
                             VideoEntityId = 87
                         },
@@ -2931,7 +2962,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 88,
                             Name = "Screening 88",
-                            ScreeningDate = new DateTime(2021, 9, 30, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3211),
+                            ScreeningDate = new DateTime(2021, 9, 30, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7473),
                             SoldTickets = 4,
                             VideoEntityId = 88
                         },
@@ -2939,7 +2970,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 89,
                             Name = "Screening 89",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3215),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7477),
                             SoldTickets = 3,
                             VideoEntityId = 89
                         },
@@ -2955,7 +2986,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 91,
                             Name = "Screening 91",
-                            ScreeningDate = new DateTime(2021, 10, 25, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3221),
+                            ScreeningDate = new DateTime(2021, 10, 25, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7483),
                             SoldTickets = 2,
                             VideoEntityId = 91
                         },
@@ -2963,7 +2994,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 92,
                             Name = "Screening 92",
-                            ScreeningDate = new DateTime(2021, 10, 24, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3225),
+                            ScreeningDate = new DateTime(2021, 10, 24, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7487),
                             SoldTickets = 2,
                             VideoEntityId = 92
                         },
@@ -2971,7 +3002,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 93,
                             Name = "Screening 93",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3229),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7491),
                             SoldTickets = 2,
                             VideoEntityId = 93
                         },
@@ -2979,7 +3010,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 94,
                             Name = "Screening 94",
-                            ScreeningDate = new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3233),
+                            ScreeningDate = new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7494),
                             SoldTickets = 4,
                             VideoEntityId = 94
                         },
@@ -3003,7 +3034,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 97,
                             Name = "Screening 97",
-                            ScreeningDate = new DateTime(2021, 9, 26, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3238),
+                            ScreeningDate = new DateTime(2021, 9, 26, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7500),
                             SoldTickets = 2,
                             VideoEntityId = 97
                         },
@@ -3011,7 +3042,7 @@ namespace MoviesApp.Api.Migrations
                         {
                             Id = 98,
                             Name = "Screening 98",
-                            ScreeningDate = new DateTime(2021, 10, 16, 22, 35, 53, 258, DateTimeKind.Local).AddTicks(3242),
+                            ScreeningDate = new DateTime(2021, 10, 16, 23, 51, 19, 778, DateTimeKind.Local).AddTicks(7505),
                             SoldTickets = 4,
                             VideoEntityId = 98
                         },
@@ -3102,37 +3133,6 @@ namespace MoviesApp.Api.Migrations
                     b.HasIndex("ScreeningEntityId");
 
                     b.ToTable("Tickets");
-                });
-
-            modelBuilder.Entity("MoviesApp.Api.Entities.VideosWithMostScreeningsEntity", b =>
-                {
-                    b.Property<int>("NumberOfScreenings")
-                        .HasColumnType("int");
-
-                    b.Property<int>("VideoId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("VideoName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("VideosWithMostScreenings");
-                });
-
-            modelBuilder.Entity("MoviesApp.Api.Entities.VideosWithMostSoldTicketsEntity", b =>
-                {
-                    b.Property<string>("ScreeningName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SoldTickets")
-                        .HasColumnType("int");
-
-                    b.Property<int>("VideoId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("VideoName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("VideosWithMostSoldTickets");
                 });
 
             modelBuilder.Entity("ActorEntityVideoEntity", b =>

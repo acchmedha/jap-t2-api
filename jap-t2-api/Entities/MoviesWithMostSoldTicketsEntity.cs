@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace MoviesApp.Api.Entities
 {
-    public class MostRatedVideoEntity
+    public class MoviesWithMostSoldTicketsEntity
     {
         public int VideoId { get; set; }
         public string VideoName { get; set; }
-        public int NumberOfRatings { get; set; }
-        public double AverageRating { get; set; }
+        public string ScreeningName { get; set; }
+        public int SoldTickets { get; set; }
     }
 }
