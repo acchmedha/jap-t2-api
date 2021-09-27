@@ -24,7 +24,7 @@ namespace JAP_Task_1_MoviesApi.Controllers
         [Authorize]
         public async Task<IActionResult> AddRating(AddRatingRequest ratingReq)
         {
-            var response = await _ratingService.AddRating(ratingReq.Value, ratingReq.VideoId, GetUserId());
+            await _ratingService.AddRating(ratingReq.Value, ratingReq.VideoId, GetUserId());
 
             return Ok("Successfully added rating");
         }

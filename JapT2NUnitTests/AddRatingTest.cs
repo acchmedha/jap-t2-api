@@ -111,11 +111,10 @@ namespace JAP_Task_1_MoviesApi
         [Test]
         public async Task AddRatingTest_InputValidRatingAdd_ReturnTrue()
         {
-            var response = await _ratingsService.AddRating(4.1F, 1, 2);
+            var response = await _ratingsService.AddRating(4.1, 1, 2);
 
             //Is the rating added?
-            Assert.IsTrue(response.Success);
-            Assert.AreEqual("Successfully added rating", response.Message);
+            Assert.IsTrue(response);
 
             var ratingAfter = (await _context.Ratings.Where(x => x.VideoEntityId == 1).ToListAsync()).Average(x => x.Value);
 
@@ -126,17 +125,15 @@ namespace JAP_Task_1_MoviesApi
         public async Task AddRatingTest_InputInValidRatingAdd_ReturnFalse()
         {
             var response1 = await _ratingsService.AddRating(4.1, 2, 2);
-            ServiceResponse<bool> response2 = new();
 
             //Is the rating added?
             //first one needs to be added
-            Assert.IsTrue(response1.Success);
-            Assert.AreEqual(response1.Message, "Successfully added rating");
+            Assert.IsTrue(response1);
 
             //second time it shouldn't. one user cannot rate the same film/show twice!
             try
             {
-                response2 = await _ratingsService.AddRating(4.1, 2, 2);
+                var response2 = await _ratingsService.AddRating(4.1, 2, 2);
             }
             catch (Exception e)
             {

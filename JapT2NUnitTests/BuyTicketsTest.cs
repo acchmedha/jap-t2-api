@@ -66,8 +66,7 @@ namespace JAP_Task_1_MoviesApi
         {
             var response = await ticketService.BuyTickets(1, 2, 1);
 
-            Assert.IsTrue(response.Data);
-            Assert.AreEqual(response.Message, "Successfully bought tickets!");
+            Assert.IsTrue(response);
         }
 
         [Test]

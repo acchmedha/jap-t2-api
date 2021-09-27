@@ -114,7 +114,7 @@ namespace JAP_Task_1_MoviesApi
         [Test]
         public async Task MediaSearchTests_InputNormalFilmTitle_ReturnListOf1()
         {
-            var list = (await _videoService.GetFilteredVideos("The s")).Data;
+            var list = (await _videoService.GetFilteredVideos("The s"));
 
             foreach (var i in list) Console.WriteLine(i.Title);
 
@@ -126,7 +126,7 @@ namespace JAP_Task_1_MoviesApi
         [Test]
         public async Task MediaSearchTests_InputAfter1970_ReturnListOf1()
         {
-            var list = (await _videoService.GetFilteredVideos("after 1980")).Data;
+            var list = (await _videoService.GetFilteredVideos("after 1980"));
 
             //should only be one from the three given movies
             Assert.AreEqual(1, list.Count);
@@ -135,7 +135,7 @@ namespace JAP_Task_1_MoviesApi
         [Test]
         public async Task MediaSearchTests_InputAfter72EdgeCase_ReturnListOf2()
         {
-            var list = (await _videoService.GetFilteredVideos("after 1972")).Data;
+            var list = (await _videoService.GetFilteredVideos("after 1972"));
 
             //movie with the release year 1972 should not be included
             Assert.AreEqual(2, list.Count);
@@ -144,7 +144,7 @@ namespace JAP_Task_1_MoviesApi
         [Test]
         public async Task MediaSearchTests_InputDescriptionWord_ReturnListOf1()
         {
-            var list = (await _videoService.GetFilteredVideos("Vito Corleone")).Data;
+            var list = (await _videoService.GetFilteredVideos("Vito Corleone"));
 
             //should only be one from the three given movies
             Assert.AreEqual(1, list.Count);

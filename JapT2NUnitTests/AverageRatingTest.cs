@@ -114,7 +114,7 @@ namespace JAP_Task_1_MoviesApi
         [Test]
         public async Task RatingTest_NormalCase_ReturnsValid()
         {
-            var videosList = (await _videoService.GetVideos(VideoEnum.Movie, new())).Data;
+            var videosList = (await _videoService.GetVideos(VideoEnum.Movie, new()));
 
             var film1 = videosList.Find(x => x.Id == 1);
             Assert.AreEqual(4.10, film1.AverageRating, .1);
@@ -122,7 +122,7 @@ namespace JAP_Task_1_MoviesApi
         [Test]
         public async Task RatingTest_NoRatings_Returns0()
         {
-            var videosList = (await _videoService.GetVideos(VideoEnum.Movie, new())).Data;
+            var videosList = (await _videoService.GetVideos(VideoEnum.Movie, new()));
 
             var film1 = videosList.Find(x => x.Id == 3);
             Assert.AreEqual(0, film1.AverageRating);
@@ -131,7 +131,7 @@ namespace JAP_Task_1_MoviesApi
         [Test]
         public async Task RatingTest_RangeCheck_ReturnsNumberPositiveOrZero()
         {
-            var videosList = (await _videoService.GetVideos(VideoEnum.Movie, new())).Data;
+            var videosList = (await _videoService.GetVideos(VideoEnum.Movie, new()));
 
             // every average rating needs to be between 0 and 5 (0 and 5 are included)
             videosList.ForEach(x =>
