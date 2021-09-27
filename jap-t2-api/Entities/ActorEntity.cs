@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 
-namespace JAP_Task_1_MoviesApi.Models
+namespace JAP_Task_1_MoviesApi.Entities
 {
     public class ActorEntity
     {

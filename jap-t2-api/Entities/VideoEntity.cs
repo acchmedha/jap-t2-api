@@ -1,8 +1,9 @@
-﻿using MoviesApp.Api.Entities;
+﻿using JAP_Task_1_MoviesApi.Models;
+using MoviesApp.Api.Entities;
 using System;
 using System.Collections.Generic;
 
-namespace JAP_Task_1_MoviesApi.Models
+namespace JAP_Task_1_MoviesApi.Entities
 {
     public class VideoEntity
     {

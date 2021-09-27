@@ -4,9 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using JAP_Task_1_MoviesApi.Data;
-using JAP_Task_1_MoviesApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using JAP_Task_1_MoviesApi.Entities;
 
 namespace JAP_Task_1_MoviesApi.Controllers
 {

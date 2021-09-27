@@ -1,4 +1,5 @@
-﻿using JAP_Task_1_MoviesApi.Models;
+﻿using JAP_Task_1_MoviesApi.Entities;
+using JAP_Task_1_MoviesApi.Models;
 using JAP_Task_1_MoviesApi.Services;
 using Microsoft.EntityFrameworkCore;
 using MoviesApp.Api.Entities;
