@@ -21,7 +21,7 @@ namespace JAP_Task_1_MoviesApi.Controllers
             { Username = request.Username, FirstName = request.FirstName, LastName = request.LastName },
                 request.Password);
 
-            return (response.Success) ? Ok(response) : BadRequest(response);
+            return Ok(response);
         }
 
         [HttpPost("login")]
@@ -29,7 +29,7 @@ namespace JAP_Task_1_MoviesApi.Controllers
         {
             var response = await _authService.Login(request.Username, request.Password);
 
-            return (response.Success) ? Ok(response) : BadRequest(response);
+            return Ok(response);
         }
     }
 }

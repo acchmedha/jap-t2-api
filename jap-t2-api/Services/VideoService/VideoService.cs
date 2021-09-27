@@ -23,11 +23,9 @@ namespace JAP_Task_1_MoviesApi.Services
             _mapper = mapper;
         }
 
-        public async Task<ServiceResponse<VideoFullInfoDto>> GetVideo(int id)
+        public async Task<VideoFullInfoDto> GetVideo(int id)
         {
-            ServiceResponse<VideoFullInfoDto> serviceResponse = new()
-            {
-                Data = await _context.Videos
+            var video = await _context.Videos
                         .Include(x => x.Actors).AsSingleQuery()
                         .Include(x => x.Ratings).AsSingleQuery()
                         .Select(x => new VideoFullInfoDto
@@ -41,19 +39,14 @@ namespace JAP_Task_1_MoviesApi.Services
                             Actors = x.Actors.Select(x => new ActorVideoDto { FirstName = x.FirstName, LastName = x.LastName })
                             .ToList(),
                         })
-                        .FirstOrDefaultAsync(x => x.Id == id) ?? throw new Exception("Video not found"),
-                Message = "Success",
-                Success = true
-            };
+                        .FirstOrDefaultAsync(x => x.Id == id) ?? throw new Exception("Video not found");
 
-            return serviceResponse;
+            return video;
         }
 
-        public async Task<ServiceResponse<List<MovieDto>>> GetVideos(VideoEnum videoType, Pagination pagination)
+        public async Task<List<MovieDto>> GetVideos(VideoEnum videoType, Pagination pagination)
         {
-            ServiceResponse<List<MovieDto>> serviceResponse = new()
-            {
-                Data = await _context.Videos
+            var videos = await _context.Videos
                                    .Include(x => x.Ratings)
                                    .Where(x => x.Type == videoType)
                                    .Select(x => new MovieDto
@@ -70,29 +63,21 @@ namespace JAP_Task_1_MoviesApi.Services
                                    .OrderByDescending(x => x.AverageRating)
                                    .Skip((pagination.PageNumber - 1) * pagination.PageSize)
                                    .Take(pagination.PageSize)
-                                   .ToListAsync(),
-                Message = "Success",
-                Success = true
-            };
+                                   .ToListAsync();
 
-            return serviceResponse;
+            return videos;
         }
 
-        public async Task<ServiceResponse<List<MovieDto>>> GetFilteredVideos(string search)
+        public async Task<List<MovieDto>> GetFilteredVideos(string search)
         {
             var query = _context.Videos.AsQueryable();
             AddFiltersForMovieSearch(search, ref query);
 
-            return new()
-            {
-                Data = await query.OrderByDescending(x => x.Ratings.Select(x => x.Value)
+            return await query.OrderByDescending(x => x.Ratings.Select(x => x.Value)
                                                                 .DefaultIfEmpty()
                                                                 .Average())
                                                                 .Select(x => _mapper.Map<MovieDto>(x))
-                                                                .ToListAsync(),
-                Message = "Success",
-                Success = true
-            };    
+                                                                .ToListAsync();  
         }
 
         private static void AddFiltersForMovieSearch(string Search, ref IQueryable<VideoEntity> query)

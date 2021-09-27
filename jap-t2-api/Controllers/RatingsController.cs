@@ -26,9 +26,7 @@ namespace JAP_Task_1_MoviesApi.Controllers
         {
             var response = await _ratingService.AddRating(ratingReq.Value, ratingReq.VideoId, GetUserId());
 
-            if (!response.Success) return BadRequest(response);
-
-            return Ok(response);
+            return Ok("Successfully added rating");
         }
     }
 }

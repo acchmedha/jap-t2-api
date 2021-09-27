@@ -17,7 +17,7 @@ namespace MoviesApp.Api.Services
             _context = context;
         }
 
-        public async Task<ServiceResponse<bool>> BuyTickets(int screeningId, int numberOfTickets, int userId)
+        public async Task<bool> BuyTickets(int screeningId, int numberOfTickets, int userId)
         {
             if (numberOfTickets <= 0)
                 throw new Exception("Number of tickets cannot be zero or negative!");
@@ -28,22 +28,18 @@ namespace MoviesApp.Api.Services
                 throw new Exception("Screening does not exist!");
             else if (screening.ScreeningDate <= DateTime.Now)
                 throw new Exception("Screening is in the past!");
-            else
-            {
-                await _context.SaveChangesAsync();
-
-                await _context.Tickets
-                    .AddAsync(new TicketEntity
-                    {
-                        ScreeningEntityId = screeningId,
-                        UserEntityId = userId,
-                        BoughtTickets = numberOfTickets
-                    });
+            
+            await _context.Tickets
+                .AddAsync(new TicketEntity
+                {
+                    ScreeningEntityId = screeningId,
+                    UserEntityId = userId,
+                    BoughtTickets = numberOfTickets
+                });
                 
-                await _context.SaveChangesAsync();
-
-                return new() { Success = true, Data = true, Message = "Successfully bought tickets!" };
-            }
+            await _context.SaveChangesAsync();
+            
+            return true;
         }
     }
 }

@@ -13,10 +13,8 @@ namespace JAP_Task_1_MoviesApi.Services
         {
             _context = context;
         }
-        public async Task<ServiceResponse<bool>> AddRating(double addValue, int addVideoId, int userId)
+        public async Task<bool> AddRating(double addValue, int addVideoId, int userId)
         {
-            ServiceResponse<bool> response = new() { Data = false };
-
             if (addValue < 1 || addValue > 5)
                 throw new Exception("Rating must be between 1 and 5!");
 
@@ -32,7 +30,7 @@ namespace JAP_Task_1_MoviesApi.Services
             await _context.Ratings.AddAsync( new() { Value = addValue, VideoEntityId = addVideoId, UserEntityId = userId});
             await _context.SaveChangesAsync();
 
-            return new() { Data = true, Success = true, Message = "Successfully added rating" };
+            return true;
         }
     }
 }

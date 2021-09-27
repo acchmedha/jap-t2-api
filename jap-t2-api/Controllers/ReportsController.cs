@@ -18,19 +18,19 @@ namespace MoviesApp.Api.Controllers
         }
 
         [HttpGet("most-rated-movies")]
-        public async Task<ActionResult<ServiceResponse<List<MostRatedMoviesEntity>>>> GetMostRatedMoviesReport()
+        public async Task<ActionResult<List<MostRatedMoviesEntity>>> GetMostRatedMoviesReport()
         {
             return Ok(await _reportService.MostRatedMoviesReport());
         }
 
         [HttpPost("movies-with-most-screenings")]
-        public async Task<ActionResult<ServiceResponse<List<MoviesWithMostScreeningsEntity>>>> VideosWithMostScreeningsReport([FromBody] DateIntervalRequest dateInterval)
+        public async Task<ActionResult<List<MoviesWithMostScreeningsEntity>>> VideosWithMostScreeningsReport([FromBody] DateIntervalRequest dateInterval)
         {
             return Ok(await _reportService.MoviesWithMostScreeningsReport(dateInterval.StartDate, dateInterval.EndDate));
         }
 
         [HttpGet("movies-with-most-sold-tickets")]
-        public async Task<ActionResult<ServiceResponse<List<MoviesWithMostSoldTicketsEntity>>>> MoviesWithMostSoldTicketsReport()
+        public async Task<ActionResult<List<MoviesWithMostSoldTicketsEntity>>> MoviesWithMostSoldTicketsReport()
         {
             return Ok(await _reportService.MoviesWithMostSoldTicketsReport());
         }

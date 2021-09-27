@@ -8,8 +8,8 @@ namespace JAP_Task_1_MoviesApi.Services
 {
     public interface IVideoService
     {
-        Task<ServiceResponse<List<MovieDto>>> GetVideos(VideoEnum videoType, Pagination pagination);
-        Task<ServiceResponse<VideoFullInfoDto>> GetVideo(int id);
-        Task<ServiceResponse<List<MovieDto>>> GetFilteredVideos(string search);
+        Task<List<MovieDto>> GetVideos(VideoEnum videoType, Pagination pagination);
+        Task<VideoFullInfoDto> GetVideo(int id);
+        Task<List<MovieDto>> GetFilteredVideos(string search);
     }
 }

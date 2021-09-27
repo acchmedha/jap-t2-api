@@ -24,9 +24,8 @@ namespace JAP_Task_1_MoviesApi.Services
             _config = config;
         }
 
-        public async Task<ServiceResponse<LoginDto>> Login(string username, string password)
+        public async Task<LoginDto> Login(string username, string password)
         {
-            ServiceResponse<LoginDto> response = new();
             UserEntity user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
 
             if (user == null)
@@ -37,24 +36,19 @@ namespace JAP_Task_1_MoviesApi.Services
             {
                 throw new Exception("Wrong password!");
             }
-            else
-            {
-                LoginDto userLogin = new()
-                {
-                    Token = CreateToken(user),
-                    Username = user.Username,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName
-                };
 
-                response.Success = true;
-                response.Data = userLogin;
-                response.Message = "Login successful!";
-            }
-            return response;
+            LoginDto userLogin = new()
+            {
+                Token = CreateToken(user),
+                Username = user.Username,
+                FirstName = user.FirstName,
+                LastName = user.LastName
+            };
+
+            return userLogin;
         }
 
-        public async Task<ServiceResponse<int>> Register(UserEntity user, string password)
+        public async Task<int> Register(UserEntity user, string password)
         {
             if (await UserExists(user.Username))
                 throw new Exception("User already exists");
@@ -67,7 +61,7 @@ namespace JAP_Task_1_MoviesApi.Services
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
 
-            return new ServiceResponse<int>() { Data = user.Id, Message = "User registered successfully", Success = true };
+            return user.Id;
         }
 
         private async Task<bool> UserExists(string username) => await _context.Users.AnyAsync(x => x.Username.ToLower() == username.ToLower());

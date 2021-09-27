@@ -15,45 +15,24 @@ namespace MoviesApp.Api.Services
         {
             _context = context;
         }
-        public async Task<ServiceResponse<List<MostRatedMoviesEntity>>> MostRatedMoviesReport()
+        public async Task<List<MostRatedMoviesEntity>> MostRatedMoviesReport()
         {
-            var serviceResponse = new ServiceResponse<List<MostRatedMoviesEntity>>
-            {
-                Data = await _context.MostRatedVideos.FromSqlRaw("EXEC [dbo].[getTop10MoviesWithMostRatings];")
-                                                            .ToListAsync(),
-                Success = true,
-                Message = "Success"
-            };
-
-            return serviceResponse;
+            return await _context.MostRatedVideos.FromSqlRaw("EXEC [dbo].[getTop10MoviesWithMostRatings];")
+                                                            .ToListAsync();
         }
 
-        public async Task<ServiceResponse<List<MoviesWithMostScreeningsEntity>>> MoviesWithMostScreeningsReport(DateTime fromDate, 
+        public async Task<List<MoviesWithMostScreeningsEntity>> MoviesWithMostScreeningsReport(DateTime fromDate, 
             DateTime toDate)
         {
-            var serviceResponse = new ServiceResponse<List<MoviesWithMostScreeningsEntity>>
-            {
-                Data = await _context.VideosWithMostScreenings
+            return await _context.VideosWithMostScreenings
                      .FromSqlRaw("EXEC [dbo].[getTop10MoviesWithMostScreenings] {0}, {1};", fromDate, toDate)
-                     .ToListAsync(),
-                Success = true,
-                Message = "Success"
-            };
-
-            return serviceResponse;
+                     .ToListAsync();
         }
 
-        public async Task<ServiceResponse<List<MoviesWithMostSoldTicketsEntity>>> MoviesWithMostSoldTicketsReport()
+        public async Task<List<MoviesWithMostSoldTicketsEntity>> MoviesWithMostSoldTicketsReport()
         {
-            var serviceResponse = new ServiceResponse<List<MoviesWithMostSoldTicketsEntity>>
-            {
-                Data = await _context.VideosWithMostSoldTickets.FromSqlRaw("EXEC [dbo].[getMoviesWithMostSoldTicketsNoRating]")
-                                                                      .ToListAsync(),
-                Success = true,
-                Message = "Success"
-            };
-
-            return serviceResponse;
+            return await _context.VideosWithMostSoldTickets.FromSqlRaw("EXEC [dbo].[getMoviesWithMostSoldTicketsNoRating]")
+                                                                      .ToListAsync();
         }
     }
 }

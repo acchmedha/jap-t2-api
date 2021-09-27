@@ -35,7 +35,7 @@ namespace JAP_Task_1_MoviesApi.Controllers
         {
             var response = await _videoService.GetVideo(id);
 
-            return response.Success ? Ok(response) : NotFound();
+            return Ok(response);
         }
     }
 }

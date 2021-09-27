@@ -8,6 +8,6 @@ namespace MoviesApp.Api.Services
 {
     public interface ITicketService
     {
-        Task<ServiceResponse<bool>> BuyTickets(int screeningId, int numberOfTickets, int userId);
+        Task<bool> BuyTickets(int screeningId, int numberOfTickets, int userId);
     }
 }

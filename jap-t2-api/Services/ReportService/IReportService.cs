@@ -9,8 +9,8 @@ namespace MoviesApp.Api.Services
 {
     public interface IReportService
     {
-        Task<ServiceResponse<List<MostRatedMoviesEntity>>> MostRatedMoviesReport();
-        Task<ServiceResponse<List<MoviesWithMostScreeningsEntity>>> MoviesWithMostScreeningsReport(DateTime fromDate, DateTime toDate);
-        Task<ServiceResponse<List<MoviesWithMostSoldTicketsEntity>>> MoviesWithMostSoldTicketsReport();
+        Task<List<MostRatedMoviesEntity>> MostRatedMoviesReport();
+        Task<List<MoviesWithMostScreeningsEntity>> MoviesWithMostScreeningsReport(DateTime fromDate, DateTime toDate);
+        Task<List<MoviesWithMostSoldTicketsEntity>> MoviesWithMostSoldTicketsReport();
     }
 }
